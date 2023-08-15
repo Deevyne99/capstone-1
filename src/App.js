@@ -1,5 +1,5 @@
-import './categories.style.scss'
 import CategoryItem from './components/category-component/CategoryItem'
+import Directory from './components/directory/DirectoryComponent'
 const App = () => {
   const initialState = [
     {
@@ -29,13 +29,7 @@ const App = () => {
     },
   ]
 
-  return (
-    <div className='categories-container'>
-      {initialState.map((category) => {
-        return <CategoryItem key={category.id} category={category} />
-      })}
-    </div>
-  )
+  return <Directory categories={initialState} />
 }
 
 export default App
