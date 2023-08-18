@@ -3,6 +3,7 @@ import Home from './components/routes/home/Home'
 import { Outlet } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/routes/navigations/Navigation'
+import SignIn from './components/routes/signIn/Sign'
 
 const Shop = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path='shop' element={<Shop />} />
+          <Route path='signIn' element={<SignIn />} />
         </Route>
       </Routes>
     </>
