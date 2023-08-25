@@ -19,9 +19,9 @@ const Signup = () => {
       return
     }
     try {
-      const response = await createUserWithEmailAndPasswordAuth(email, password)
-      console.log(response)
-      //await CreateUserDocumentFromAuth(user, { displayName })
+      const { user } = await createUserWithEmailAndPasswordAuth(email, password)
+      // console.log(response)
+      await CreateUserDocumentFromAuth(user, { displayName })
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         alert('cannot create user Email already exist')
