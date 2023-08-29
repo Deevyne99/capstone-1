@@ -29,9 +29,9 @@ const SignIn = () => {
       <button onClick={() => loginGooglePopUp()}>
         sign in with goggle popup
       </button>
-      <button onClick={signInWithGoogleRedirect}>
+      {/* <button onClick={signInWithGoogleRedirect}>
         sign in with goggle redirect
-      </button>
+      </button> */}
       <Signup />
     </div>
   )
