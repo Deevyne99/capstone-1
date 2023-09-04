@@ -20,6 +20,7 @@ const Signin = () => {
   const signInWithGoogle = async () => {
     const response = await signInWithGooglePopup()
     const { user } = response
+
     await CreateUserDocumentFromAuth(user)
     // console.log(response)
   }
@@ -31,8 +32,8 @@ const Signin = () => {
     e.preventDefault()
 
     try {
-      const { user } = await signInWithEmailAndPasswordAuth(email, password)
-      setCurrentUser(user)
+      await signInWithEmailAndPasswordAuth(email, password)
+
       resetFormFields()
     } catch (error) {
       switch (error.code) {
