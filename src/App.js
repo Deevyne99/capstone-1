@@ -4,15 +4,8 @@ import { Outlet } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/routes/navigations/Navigation'
 import Authenticate from './components/routes/authentication/Authentication'
+import Shop from './components/routes/shop/Shop'
 
-const Shop = () => {
-  return (
-    <>
-      <h1>Hello world</h1>
-      <div></div>
-    </>
-  )
-}
 const App = () => {
   return (
     <>
