@@ -5,10 +5,15 @@ import { ReactComponent as CrownLogo } from '../../../assets/crown.svg'
 import './navigation.style.scss'
 import { userContext } from '../../../context/UserContext'
 import { signOutUser } from '../../../utils/firebase/firebase'
+import CartIcon from '../../cart-icon/CartIcon'
+import CartDropdown from '../../cart-dropdown/cart-dropdown.component'
+import { CartContext } from '../../../context/cartContext'
+// import { CartContext } from '../../contexts/cartContext'
 
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(userContext)
-  console.log(currentUser)
+  const { isCartOpen } = useContext(CartContext)
+  // console.log(currentUser)
   const handleSignOut = async () => {
     const response = await signOutUser()
     console.log(response)
@@ -35,7 +40,9 @@ const Navigation = () => {
               Sign In
             </Link>
           )}
+          <CartIcon />
         </div>
+        {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
     </Fragment>
